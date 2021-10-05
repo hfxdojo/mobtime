@@ -34,10 +34,22 @@ export const header = () =>
             {
               type: 'button',
               class: 'mr-3',
-              onclick: preventDefault(() => [() => actions.PlayHonk]),
+              onclick: preventDefault(() => [
+                () => {
+                  actions.PlayHonk;
+                  document.querySelector('#sound-control').textContent = '🔔';
+                },
+              ]),
             },
             [
-              h('span', { class: 'hidden sm:inline sm:mr-1' }, text('🔕')),
+              h(
+                'span',
+                {
+                  id: 'sound-control',
+                  class: 'hidden sm:inline sm:mr-1',
+                },
+                text('🔕'),
+              ),
               text('Sound'),
             ],
           ),
