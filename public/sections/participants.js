@@ -6,7 +6,7 @@ import { participant } from '../components/participant.js';
 export const participants = (members, profile = {}) =>
   section({}, [
     h('div', { class: '' }, [
-      column('Participants', [
+      column('SETT', [
         h(
           'ol',
           {
