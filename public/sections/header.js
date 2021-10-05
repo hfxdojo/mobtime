@@ -34,7 +34,7 @@ export const header = () =>
             {
               type: 'button',
               class: 'mr-3',
-              onclick: preventDefault(() => [actions.SetModal, 'profile']),
+              onclick: preventDefault(() => [() => actions.PlayHonk]),
             },
             [
               h('span', { class: 'hidden sm:inline sm:mr-1' }, text('🔕')),
