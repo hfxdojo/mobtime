@@ -37,8 +37,8 @@ export const header = () =>
               onclick: preventDefault(() => [actions.SetModal, 'profile']),
             },
             [
-              h('span', { class: 'hidden sm:inline sm:mr-1' }, text('👤')),
-              text('Profile'),
+              h('span', { class: 'hidden sm:inline sm:mr-1' }, text('🔕')),
+              text('Sound'),
             ],
           ),
           h(
