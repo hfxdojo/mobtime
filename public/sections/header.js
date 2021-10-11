@@ -36,8 +36,10 @@ export const header = () =>
               class: 'mr-3',
               onclick: preventDefault(() => [
                 () => {
-                  document.querySelector('#sound-control').textContent = '🔔';
-                  return actions.PlayHonk;
+                  if (!profile.enableSounds) {
+                    document.querySelector('#sound-control').textContent = '🔔';
+                    return actions.PlayHonk;
+                  }
                 },
               ]),
             },
