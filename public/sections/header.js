@@ -36,6 +36,8 @@ export const header = () =>
               class: 'mr-3',
               onclick: preventDefault(() => [
                 () => {
+                  // please take a look at the line 45 in timer.js
+                  // we can probably pass the state a parameter there
                   if (!profile.enableSounds) {
                     document.querySelector('#sound-control').textContent = '🔔';
                     return actions.PlayHonk;
