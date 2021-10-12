@@ -39,7 +39,9 @@ export const header = () =>
                   if (!profile.enableSounds) {
                     document.querySelector('#sound-control').textContent = '🔔';
                     return actions.PlayHonk;
-                  }
+                  } 
+                    document.querySelector('#sound-control').textContent = '🔕';
+                  
                 },
               ]),
             },
