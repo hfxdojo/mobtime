@@ -1,4 +1,4 @@
-# mobtime
+# mobtime 
 
 A websocket powered, collaborative mobbing timer.
 
