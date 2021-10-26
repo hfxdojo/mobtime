@@ -38,12 +38,16 @@ export const header = () =>
                 () => {
                   // please take a look at the line 45 in timer.js
                   // we can probably pass the state a parameter there
-                  if (!profile.enableSounds) {
+
+                  // if (!profile.enableSounds) {
+                  if (
+                    document.querySelector('#sound-control').textContent == '🔕'
+                  ) {
                     document.querySelector('#sound-control').textContent = '🔔';
                     return actions.PlayHonk;
-                  } 
-                    document.querySelector('#sound-control').textContent = '🔕';
-                  
+                  }
+                  document.querySelector('#sound-control').textContent = '🔕';
+                  return true;
                 },
               ]),
             },
