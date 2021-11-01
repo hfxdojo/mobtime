@@ -42,7 +42,7 @@ app({
       {
         toastMessages: State.getToasts(state),
       },
-      [header(), timeRemaining(state), summary(state), showModal(state)],
+      [header(state), timeRemaining(state), summary(state), showModal(state)],
     ),
 
   subscriptions: state => [

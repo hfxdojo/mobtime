@@ -5,89 +5,89 @@ import { preventDefault } from '../lib/preventDefault.js';
 
 import * as actions from '../actions.js';
 
-export const header = () =>
-  section(
-    {
-      class: {
-        "flex": true,
-        'flex-row': true,
-        'items-center': true,
-        'justify-between': true,
-      },
+export const header = state => console.dir(state);
+section(
+  {
+    class: {
+      "flex": true,
+      'flex-row': true,
+      'items-center': true,
+      'justify-between': true,
     },
-    [
-      h(
-        'div',
-        {
-          class: 'uppercase tracking-widest text-2xl',
-        },
-        [text('⏱️ mobtime')],
-      ),
-      h(
-        'div',
-        {
-          class: 'flex flex-row',
-        },
-        [
-          h(
-            'button',
-            {
-              type: 'button',
-              class: 'mr-3',
-              onclick: preventDefault(() => [
-                () => {
-                  // please take a look at the line 45 in timer.js
-                  // we can probably pass the state a parameter there
+  },
+  [
+    h(
+      'div',
+      {
+        class: 'uppercase tracking-widest text-2xl',
+      },
+      [text('⏱️ mobtime')],
+    ),
+    h(
+      'div',
+      {
+        class: 'flex flex-row',
+      },
+      [
+        h(
+          'button',
+          {
+            type: 'button',
+            class: 'mr-3',
+            onclick: preventDefault(() => [
+              () => {
+                // please take a look at the line 45 in timer.js
+                // we can probably pass the state a parameter there
 
-                  // if (!profile.enableSounds) {
-                  if (
-                    document.querySelector('#sound-control').textContent == '🔕'
-                  ) {
-                    document.querySelector('#sound-control').textContent = '🔔';
-                    return actions.PlayHonk;
-                  }
-                  document.querySelector('#sound-control').textContent = '🔕';
-                  return true;
-                },
-              ]),
-            },
-            [
-              h(
-                'span',
-                {
-                  id: 'sound-control',
-                  class: 'hidden sm:inline sm:mr-1',
-                },
-                text('🔕'),
-              ),
-              text('Sound'),
-            ],
-          ),
-          h(
-            'button',
-            {
-              type: 'button',
-              class: 'mr-3',
-              onclick: preventDefault(() => [actions.SetModal, 'profile']),
-            },
-            [
-              h('span', { class: 'hidden sm:inline sm:mr-1' }, text('👤')),
-              text('Profile'),
-            ],
-          ),
-          h(
-            'button',
-            {
-              type: 'button',
-              class: 'mr-3',
-              onclick: preventDefault(() => [actions.SetModal, 'editTimer']),
-            },
-            [
-              h('span', { class: 'hidden sm:inline sm:mr-1' }, text('✏️')),
-              text('Edit'),
-            ],
-          ),
-        ],
-      ),
-    ],
-  );
+                // if (!profile.enableSounds) {
+                if (
+                  document.querySelector('#sound-control').textContent == '🔕'
+                ) {
+                  document.querySelector('#sound-control').textContent = '🔔';
+                  return actions.PlayHonk;
+                }
+                document.querySelector('#sound-control').textContent = '🔕';
+                return true;
+              },
+            ]),
+          },
+          [
+            h(
+              'span',
+              {
+                id: 'sound-control',
+                class: 'hidden sm:inline sm:mr-1',
+              },
+              text('🔕'),
+            ),
+            text('Sound'),
+          ],
+        ),
+        h(
+          'button',
+          {
+            type: 'button',
+            class: 'mr-3',
+            onclick: preventDefault(() => [actions.SetModal, 'profile']),
+          },
+          [
+            h('span', { class: 'hidden sm:inline sm:mr-1' }, text('👤')),
+            text('Profile'),
+          ],
+        ),
+        h(
+          'button',
+          {
+            type: 'button',
+            class: 'mr-3',
+            onclick: preventDefault(() => [actions.SetModal, 'editTimer']),
+          },
+          [
+            h('span', { class: 'hidden sm:inline sm:mr-1' }, text('✏️')),
+            text('Edit'),
+          ],
+        ),
+      ],
+    ),
+  ],
+);
