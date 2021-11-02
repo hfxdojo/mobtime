@@ -19,7 +19,12 @@ And your phone:
 ```bash
 yarn && yarn tailwind:dev && yarn start
 ```
-or
+or to execute the above command
+
+```
+./start.sh
+```
+or to spin up a docker instance
 
 ```
 docker-compose up
