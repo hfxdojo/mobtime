@@ -39,14 +39,14 @@ section(
                 // please take a look at the line 45 in timer.js
                 // we can probably pass the state a parameter there
 
-                // if (!profile.enableSounds) {
-                if (
-                  document.querySelector('#sound-control').textContent == '🔕'
-                ) {
+                if (state.profile.enableSounds) {
+                  document.querySelector('#sound-control').textContent == '🔕';
+                  state.profile.enableSounds = false;
+                } else {
                   document.querySelector('#sound-control').textContent = '🔔';
+                  state.profile.enableSounds = true;
                   return actions.PlayHonk;
                 }
-                document.querySelector('#sound-control').textContent = '🔕';
                 return true;
               },
             ]),
