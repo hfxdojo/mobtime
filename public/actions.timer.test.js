@@ -53,14 +53,14 @@ test('can pause the timer', t => {
   const originalWebsocket = {};
 
   const expectedTimerDuration = 1000;
-  const originalTimerStartedAt = now - expectedTimerDuration;
-  const timeOfPreviousAction = now - 5;
   const now = Date.now();
+  const originalTimerStartedAt = now - expectedTimerDuration;
+  const originalCurrentTime = now - 5;
 
   const initialState = {
     websocket: originalWebsocket,
     timerStartedAt: originalTimerStartedAt,
-    currentTime: timeOfPreviousAction,
+    currentTime: originalCurrentTime,
     timerDuration: 2000,
   };
 
