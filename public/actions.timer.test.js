@@ -50,24 +50,24 @@ test('can complete a timer', t => {
 });
 
 test('can pause the timer', t => {
-  const websocket = {};
+  const originalWebsocket = {};
 
   const expectedTimerDuration = 1000;
+  const originalTimerStartedAt = now - expectedTimerDuration;
+  const timeOfPreviousAction = now - 5;
   const now = Date.now();
-  const timerStartedAt = now - expectedTimerDuration;
-  const currentTime = now - 5;
 
   const initialState = {
-    websocket,
-    timerStartedAt,
-    currentTime,
+    websocket: originalWebsocket,
+    timerStartedAt: originalTimerStartedAt,
+    currentTime: timeOfPreviousAction,
     timerDuration: 2000,
   };
 
   const [state, effect] = actions.PauseTimer(initialState, now);
 
   t.deepEqual(state, {
-    websocket,
+    websocket: originalWebsocket,
     timerStartedAt: null,
     currentTime: now,
     timerDuration: expectedTimerDuration,
@@ -76,7 +76,7 @@ test('can pause the timer', t => {
   t.deepEqual(
     effect,
     effects.PauseTimer({
-      websocket,
+      websocket: originalWebsocket,
       timerDuration: expectedTimerDuration,
     }),
   );
