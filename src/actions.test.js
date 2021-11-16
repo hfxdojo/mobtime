@@ -39,16 +39,6 @@ test('SetTimerOwner does nothing when there are no connections to a specified ti
   t.deepEqual(effect, effects.none());
 });
 
-test('SetSound sets sound', t => {
-  const originalState = {
-    allowSound: false,
-  };
-  const [state, allowSound] = Actions.t.deepEqual(state, {
-    ...originalState,
-    allowSound: true,
-  });
-});
-
 test('SetTimerOwner sets the first available connection to a timer as the owner', t => {
   const timerId = 'foo';
   const otherConnection = { timerId: 'bar', isOwner: false };
