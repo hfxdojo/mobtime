@@ -31,7 +31,7 @@ export const timeRemaining = props => {
       checkbox,
       {
         id: 'enable-sound',
-        checked: state.allowSound,
+        checked: props.allowSound,
         inputProps: {
           onchange: (_, event) => [actions.SetAllowSound, event.target.checked],
         },
