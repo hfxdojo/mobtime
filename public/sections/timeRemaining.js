@@ -27,15 +27,16 @@ export const timeRemaining = props => {
     ),
 
     h(
-      'div',
+      'button',
       {
+        type: 'button',
         id: 'enable-sound-icon',
-        checked: props.allowSound,
+        href: '',
         inputProps: {
-          onchange: (_, event) => [actions.SetAllowSound, event.target.checked],
+          onclick: (_, event) => [actions.SetAllowSound, !props.allowSound],
         },
       },
-      h('text', { class: 'text-2xl' }, '🔈'),
+      '🔈',
     ),
 
     h(
