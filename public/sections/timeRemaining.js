@@ -1,6 +1,5 @@
 import { h } from '/vendor/hyperapp.js';
 
-import { checkbox } from '/components/checkbox.js';
 import { section } from '/components/section.js';
 import { button } from '/components/button.js';
 import { deleteButton } from '/components/deleteButton.js';
