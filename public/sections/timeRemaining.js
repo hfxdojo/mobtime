@@ -28,15 +28,15 @@ export const timeRemaining = props => {
     ),
 
     h(
-      checkbox,
+      'div',
       {
-        id: 'enable-sound',
+        id: 'enable-sound-icon',
         checked: props.allowSound,
         inputProps: {
           onchange: (_, event) => [actions.SetAllowSound, event.target.checked],
         },
       },
-      h('span', { class: 'text-2xl' }, 'Enable timer sounds'),
+      h('text', { class: 'text-2xl' }, '🔈'),
     ),
 
     h(
