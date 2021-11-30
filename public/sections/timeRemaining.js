@@ -1,5 +1,6 @@
 import { h } from '/vendor/hyperapp.js';
 
+import { checkbox } from '/components/checkbox.js';
 import { section } from '/components/section.js';
 import { button } from '/components/button.js';
 import { deleteButton } from '/components/deleteButton.js';
@@ -24,6 +25,18 @@ export const timeRemaining = props => {
         },
       },
       'Remaining Time',
+    ),
+
+    h(
+      checkbox,
+      {
+        id: 'enable-sound',
+        checked: state.allowSound,
+        inputProps: {
+          onchange: (_, event) => [actions.SetAllowSound, event.target.checked],
+        },
+      },
+      h('span', { class: 'text-2xl' }, 'Enable timer sounds'),
     ),
 
     h(
